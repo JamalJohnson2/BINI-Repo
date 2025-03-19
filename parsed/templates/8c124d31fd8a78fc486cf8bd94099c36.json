@@ -1,0 +1,3 @@
+{
+  "components/promo/promo-cards": "<section class=\"promo-cards-container\">\r\n    <div class=\"promo-cards\">\r\n        <div class=\"promo-card\">\r\n            <a href=\"/promo-1\">\r\n                <img \r\n                    src=\"{{cdn 'img/promo-image-1.png'}}\" \r\n                    alt=\"Summer Sale Promo 1\" \r\n                />\r\n            </a>\r\n        </div>\r\n        <div class=\"promo-card\">\r\n            <a href=\"/promo-2\">\r\n                <img \r\n                    src=\"{{cdn 'img/promo-image-2.png'}}\" \r\n                    alt=\"Summer Sale Promo 2\" \r\n                />\r\n            </a>\r\n        </div>\r\n    </div>\r\n</section>\r\n"
+}

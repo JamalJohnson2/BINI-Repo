@@ -1,0 +1,17 @@
+<div class="heroCarousel-content" 
+     data-font="{{#if @first}}{{theme_settings.slide-1-font}}{{else}}{{theme_settings.slide-2-font}}{{/if}}">
+
+    {{#if heading}}
+        <p id="heroCarousel-title-{{@index}}" class="heroCarousel-title">{{{heading}}}</p>
+    {{/if}}
+    {{#if text}}
+    <p class="heroCarousel-description heroCarousel-description-{{@index}}">{{{text}}}</p>
+        {{/if}}
+    {{#if button_text}}
+            <a href="{{url}}" 
+            class="heroCarousel-action button button--secondary button--large heroCarousel-button-{{@index}}"
+            aria-label="{{#if this.alt_text.length '!=' 0}}{{this.alt_text}}{{else}}{{lang 'carousel.slide_number' slide_number=(add @index 1)}}{{/if}}">
+            {{{button_text}}}
+        </a>
+    {{/if}}
+</div>

@@ -1,0 +1,59 @@
+// =============================================================================
+// BUTTONS (CSS)
+// =============================================================================
+
+.button {
+    line-height: 1rem;
+    transition: all 0.15s ease;
+
+    + .button {
+        margin-left: 0;
+
+        @include breakpoint("medium") {
+            margin-left: spacing("half");
+        }
+    }
+}
+
+.button[disabled] {
+    cursor: not-allowed;
+}
+
+.button--icon {
+    svg {
+        fill: stencilColor("button--icon-svg-color");
+    }
+}
+.button--secondary {
+    background-color: stencilColor("button--secondary-backgroundColor");
+    color: stencilColor("button--secondary-color");
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background-color: stencilColor("button--secondary-backgroundColorHover");
+    }
+
+    &:active {
+        background-color: stencilColor("button--secondary-backgroundColorActive");
+    }
+}
+
+.button--tertiary {
+    background-color: stencilColor("button--tertiary-backgroundColor");
+    color: stencilColor("button--tertiary-color");
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background-color: stencilColor("button--tertiary-backgroundColorHover");
+    }
+
+    &:active {
+        background-color: stencilColor("button--tertiary-backgroundColorActive");
+    }
+}

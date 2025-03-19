@@ -1,0 +1,33 @@
+<div class="section-header">
+    <h2>Featured</h2>
+</div>
+
+<div id="products-grid" class="products-grid">
+    {{#if products.featured}}
+        {{#each products.featured}}
+            <div class="product-card" data-price="{{price.without_tax.value}}">
+                <a href="{{url}}">
+                    <img src="{{getImage image 'productgallery_size' (cdn 'img/no-image.svg')}}" alt="{{name}}">
+                </a>
+                <h3>{{name}}</h3>
+                <p class="price">{{price.without_tax.formatted}}</p>
+            </div>
+        {{/each}}
+    {{else}}
+        <p>No featured products available.</p>
+    {{/if}}
+</div>
+
+<script>
+    // JavaScript sorting by price
+    document.addEventListener('DOMContentLoaded', () => {
+        const grid = document.getElementById('products-grid');
+        const products = Array.from(grid.querySelectorAll('.product-card'));
+
+        products.sort((a, b) => {
+            return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
+        });
+
+        products.forEach(product => grid.appendChild(product));
+    });
+</script>

@@ -1,0 +1,174 @@
+// =============================================================================
+// STENCIL
+// =============================================================================
+
+
+// Tools
+// -----------------------------------------------------------------------------
+//
+// 1. Import Citadel's toolkit for use.
+//
+// -----------------------------------------------------------------------------
+
+@import "../../node_modules/@bigcommerce/citadel/dist/tools/toolkit"; // 1
+@import "tools/tools";
+//Imported Google Font (DM Sans)
+
+// Settings
+// -----------------------------------------------------------------------------
+//
+// 1. Stencil global settings get imported first.
+// 2. Import all Citadel and Foundation settings.
+// 3. Common aria helpers.
+// 4. Import Stencil's component settings overrides.
+// 5. Import tools which set/reset Citadel's global settings, to be consumed by
+//    the rest of Stencil.
+// 6. Import Citadel's version of foundation.
+//      - This enables the ability to "null" variables in the Stencil settings.
+//
+// -----------------------------------------------------------------------------
+
+@import "settings/global/global"; // 1
+
+@import "../../node_modules/@bigcommerce/citadel/dist/settings/global/global"; // 2
+
+@import "settings/global/tools"; // 5
+
+@import "../../node_modules/@bigcommerce/citadel/dist/settings/normalize/normalize"; // 2
+@import "../../node_modules/@bigcommerce/citadel/dist/settings/foundation/foundation"; // 2
+@import "../../node_modules/@bigcommerce/citadel/dist/settings/bigcommerce/bigcommerce"; // 2
+
+@import "../../node_modules/@bigcommerce/citadel/dist/vendor/foundation/foundation"; // 6
+
+@import "settings/normalize/normalize"; // 4
+@import "settings/vendor/vendor"; // 4
+@import "settings/foundation/foundation"; // 4
+@import "settings/citadel/citadel"; // 4
+@import "settings/stencil/stencil"; // 4
+@import "settings/layouts/layouts"; // 4
+
+
+// Utilities
+// -----------------------------------------------------------------------------
+
+@import "utilities/utilities";
+@import "../../node_modules/@bigcommerce/citadel/dist/utilities/utilities";
+
+
+// Components
+// -----------------------------------------------------------------------------
+//
+// 1. Import Citadel's normalize dependency.
+// 2. Import Citadel's components.
+// 2. Import Stencil's component additions and custom components.
+//
+// -----------------------------------------------------------------------------
+
+@import "../../node_modules/@bigcommerce/citadel/dist/vendor/normalize/normalize"; // 1
+@import "../../node_modules/@bigcommerce/citadel/dist/components/components"; // 2
+@import "common/index"; // 3
+@import "components/components"; // 6
+
+
+// Layouts
+// -----------------------------------------------------------------------------
+//
+// 1. Stencil design layout files (example: Header or Footer).
+//
+// -----------------------------------------------------------------------------
+
+@import "layouts/layouts"; // 1
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.section-header .see-more {
+    font-size: 14px;
+    color: #000;
+    text-decoration: underline;
+}
+
+.products-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.product-card {
+    width: calc(25% - 15px); /* 4 cards in a row */
+    background: #fff;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    margin: 10px 0;
+    padding-top: 10px;
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #555;
+    font-weight: 600;
+}
+
+.promo-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 0;
+}
+
+.promo-cards {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.promo-card {
+    flex: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.promo-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.promo-card:hover {
+    transform: scale(1.01);
+}
+.sale-price {
+    color: #e74c3c;  /* Red for sale price */
+    font-weight: bold;
+}
+
+.original-price {
+    display: inline !important; 
+    color: #888;  /* Gray color for the original price */
+    text-decoration: line-through;
+    margin-left: 8px;
+}

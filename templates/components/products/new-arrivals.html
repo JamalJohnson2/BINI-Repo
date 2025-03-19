@@ -1,0 +1,23 @@
+<div class="section-header">
+    <h2>New Arrivals</h2>
+</div>
+
+<div class="products-grid">
+    {{#if products.new}}
+        {{#each products.new}}
+            <div class="product-card">
+                <a href="{{url}}">
+                    <img src="{{getImage image 'productgallery_size' (cdn 'img/no-image.svg')}}" alt="{{name}}">
+                </a>
+                <h3>{{name}}</h3>
+
+                <!-- Display price -->
+                {{#if price.price_range}}
+                    <p>{{price.price_range.min.without_tax.formatted}} - {{price.price_range.max.without_tax.formatted}}</p>
+                {{else}}
+                    <p>{{price.without_tax.formatted}}</p>
+                {{/if}}
+            </div>
+        {{/each}}
+    {{/if}}
+</div>
